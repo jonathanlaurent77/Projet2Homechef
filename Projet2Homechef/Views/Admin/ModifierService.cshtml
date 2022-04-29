@@ -1,0 +1,41 @@
+﻿@model Projet2Homechef.Models.Prestation.Service
+
+@{
+    ViewBag.Title = "ModifierService";
+    Layout = "_LayoutHomeChefVuesSecondaires";
+}
+
+<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Service</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-7">
+              <div class="form-floating mb-3">
+                  @using (Html.BeginForm())
+                        {
+                            <fieldset>
+                                <legend>Modifier un Service: </legend>
+                                @Html.LabelFor(m => Model.Titre)
+                                @Html.TextBoxFor(m => Model.Titre)
+                                @Html.ValidationMessageFor(m => Model.Titre)
+                                <br />
+                               @Html.LabelFor(m => Model.Description)
+                                @Html.TextBoxFor(m => Model.Description)
+                                @Html.ValidationMessageFor(m => Model.Description)
+                                <br />
+                                <label>ChefId</label>
+                                @Html.TextBoxFor(m => Model.Chef.Id)
+                                @Html.ValidationMessageFor(m => Model.Chef.Id)
+                                <br />
+
+                                <br />
+                                <input type="submit" value="Modifier" />
+                            </fieldset>
+                        }
+                
+            </div>
+        </div>

@@ -1,0 +1,71 @@
+﻿header {
+    
+    width: 100%;
+    top: 0;
+    text-align: center;
+}
+
+#imageTitre{
+    width:105%;
+
+}
+
+footer {
+    
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}
+
+body {
+    padding: 0px;
+}
+table{
+    display:flex;
+   
+    justify-content:center;
+}
+
+img {
+    width:100%;
+}
+
+span{
+    text-align:center;
+}
+
+.imgart {
+    width: 15%;
+    border-radius: 100%;
+    object-position:center top;
+
+    
+}
+
+fieldset{
+   
+   justify-content:center;
+}
+
+
+/*#div1 {
+    float: left;
+    margin: auto;
+    width: 20%;
+}*/
+
+#div2 {
+    float: left;
+    width: 100%;
+    margin: 0px; 
+    text-align:center;
+    object-position:center top;
+  
+
+}
+
+/*#div3 {
+    float: left;
+    width: 15%;
+    margin: auto;
+}*/

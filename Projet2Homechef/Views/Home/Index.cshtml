@@ -1,0 +1,71 @@
+﻿@model Projet2Homechef.ViewModels.HomeViewModel
+@{
+    ViewBag.Title = "HomeChef";
+    Layout = "_LayoutHomechef";
+	//Layout = "_LayoutChoixSejour";
+}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HomeChefIndex</title>
+		<meta charset="utf-8"</meta>
+		<link rel="stylesheet" href="StyleSheet.css">
+		
+	</head>
+	
+	<body>
+	
+		<header>
+	
+			
+		</header>
+	
+		@{
+                        if (User.Identity.IsAuthenticated)
+                        {
+							
+							<div id="catalogue"> 
+							@Html.Partial("../Service/CatalogueHomechef.cshtml", Model.ListeDesServices2)
+							</div>
+							<span><img id="img_logo2" src="/images/cuillercouteau.png"  /></span>
+							<div id="services">
+							@Html.Partial("../Service/MonCatalogue", Model.ListeDesServices)
+							</div>
+							<span><img id="img_logo2" src="/images/cuillercouteau.png"  /></span>
+							<div id="infos">
+							@Html.Partial("../Villageois/VillageoisServices",Model.ListeDesServices)
+							</div>
+							<h2><img id="img_logo" src="/images/cuillercouteau.png"  /></h2>
+                        }
+                        else
+                        {
+							
+							<div id="connexion">
+							@Html.Partial("../Login/Login.cshtml",Model.VVM)
+							</div>
+							<h2><img id="img_logo" src="/images/cuillercouteau.png"  /></h2>
+							<div id="catalogue">
+							@Html.Partial("../Service/CatalogueHomechef2.cshtml", Model.ListeDesServices)
+							</div>
+							<h2><img id="img_logo" src="/images/cuillercouteau.png"  /></h2>
+							<div id="prez">
+							@Html.Partial("Presentation")
+							</div>
+							<h2><img id="img_logo" src="/images/cuillercouteau.png"  /></h2>
+							<div id="fonctionnement">
+							@Html.Partial("Fonctionnement")
+							</div>
+							<h2><img id="img_logo" src="/images/cuillercouteau.png"  /></h2>							
+							<div id="inscription">
+							@Html.Partial("Inscription")
+							</div>
+							<h2><img id="img_logo" src="/images/cuillercouteau.png"  /></h2>
+                        }
+                    }
+
+		
+	</body>
+
+</html>
+
+ 

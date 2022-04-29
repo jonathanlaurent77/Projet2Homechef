@@ -1,0 +1,55 @@
+﻿
+@using Projet2Homechef.Models
+@model List<Projet2Homechef.Models.Prestation.Service>
+
+@{
+    ViewBag.Title = "CatalogueHomechef";
+    
+}
+
+<h2><img src="/images/sousmenu catalog.png"  /></h2>
+		
+		<div class="row justify-content-start">
+
+			@foreach(var service in Model)
+			{
+				
+				<!-- -->
+				
+				<!--div class="card col-6 m-5" style="width: 18rem;"-->
+				<div class="card col-6 m-5" style="width: 36rem;">
+					<div class="card-body d-flex flex-column justify-content-between">  
+                        <div>
+                            <h5 class="card-title">@service.Titre</h5>
+                            <div class="my-3">
+                               
+                            </div>
+							<div>
+							<div>
+								<img src="@service.ImagePath" width="200" height="200" />
+                            </div>
+							<div>
+								<p class="card-text">@service.Description</p>								
+								<p class="card-text">Proposé par :</p>
+								<p class="card-text">@service.Chef.UserName</p>
+								<button1 class="btn btn-success btn-xl" type="submit">@Html.ActionLink("Demander", "Demander", "Service",  @service.Id ) </button1>
+							</div>
+							</div>
+                        </div>
+						
+						<div>
+   
+							<td>  </td>
+                            
+
+                        </div>
+                        
+						
+
+					</div>
+				</div>
+			}
+			
+
+		</div>
+

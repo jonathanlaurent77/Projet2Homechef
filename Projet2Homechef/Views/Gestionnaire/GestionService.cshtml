@@ -1,0 +1,41 @@
+﻿ @model List<Projet2Homechef.Models.Prestation.Service>
+
+@{
+    ViewBag.Title = "GestionService";
+    Layout = "_LayoutHomeChefVuesSecondaires";
+}
+
+<h3 class="titre">Page réservée aux HomeChefs</h3>
+
+
+
+ <h4>Liste des nouveaux inscrits à vérifier</h4>
+ 
+ <table border="1">
+      <tr>
+          <th>Titre</th>    
+          <th>Description</th>  
+          <th>Chef</th>
+          <th></th> 
+          <th></th> 
+         
+         
+       </tr>
+    @foreach(var service in Model)
+    {
+         <tr>
+          <td>@service.Titre</td>    
+          <td>@service.Description</td> 
+          <td>@service.Chef.UserName</td> <!--Lien vers le  chef-->         
+          <td> <button1 class="btn btn-success btn-xl" type="submit">@Html.ActionLink("Valider", "ValiderService", "Gestionnaire",new{@id = @service.Id}) </button1> </td>
+          <td> <button2 class="btn btn-danger btn-xl" type="submit">@Html.ActionLink("Rejeter", "DeleteService", "Gestionnaire", new{@id = @service.Id})</button2> </td>
+         
+
+      </tr>
+
+      
+    }
+
+      
+  </table>
+  

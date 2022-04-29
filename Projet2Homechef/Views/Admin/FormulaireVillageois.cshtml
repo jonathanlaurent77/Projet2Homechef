@@ -1,0 +1,48 @@
+﻿@model List<Projet2Homechef.Models.Villageois>
+
+@{
+    ViewBag.Title = "Admin";
+    Layout = "_LayoutHomeChefVuesSecondaires";
+}
+
+<h3 class="titre">Modification Villageois</h3>
+
+<tr>
+          <th>Nom</th>    
+          <th>Prenom</th>  
+          <th>DateDeNaissance</th>
+          <th>Email</th> 
+          <th>Tel</th> 
+          <th>Role</th> 
+      
+       </tr>
+    
+    
+    @*     <tr>
+          <td>@villageois.Nom</td>    
+          <td>@villageois.Prenom</td> 
+          <td>@villageois.DateDeNaissance.ToShortDateString()</td> 
+          <td>@villageois.Email</td> 
+          <td>@villageois.Tel</td> 
+          <td>@villageois.Role</td> 
+          </tr>
+
+           </tr>
+    
+    
+         <tr>
+          <td>@villageois.Nom</td>    
+          <td>@villageois.Prenom</td> 
+          <td>@villageois.DateDeNaissance.ToShortDateString()</td> 
+          <td>@villageois.Email</td> 
+          <td>@villageois.Tel</td> 
+          <td>@villageois.Role</td> 
+          </tr>*@
+
+
+          <div>Formulaire</div>
+@{Html.BeginForm("Index", "Home"); }
+@Html.Label("estMajeur", "Cochez la case si vous êtes majeur")
+@Html.CheckBox("estMajeur", true)
+<input type="submit" value="Envoyer" />
+@{Html.EndForm(); }

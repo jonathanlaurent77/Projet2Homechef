@@ -1,0 +1,39 @@
+﻿#entete, #menu, #contenu, #footer {
+    padding: 1px 0;
+}
+
+#entete {
+    text-align: center;
+    margin: 0 auto;
+    background-image: url(/imagesProjet2Homechef/5.jpg);
+   
+}
+
+#main {
+    margin: auto;
+}
+
+#menu {
+    float: left;
+    width: 240px;
+    background-color: lightsalmon;
+}
+
+#contenu {
+    margin-left: 245px;
+    background-color: lightblue;
+}
+
+#footer {
+    background-color: lightgreen;
+    text-align: center;
+    clear: both;
+}
+
+.titre {
+    text-align: center;
+}
+
+.selectionne {
+    color: red;
+}

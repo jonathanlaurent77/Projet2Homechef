@@ -1,0 +1,40 @@
+﻿@model List<Projet2Homechef.Models.Prestation.Service>
+@{
+    ViewBag.Title = "VillageoisServices";
+    }
+
+<h2><img src="/images/sousmenu presta.png"  /></h2>
+	
+
+<h4>Liste des Services que vous proposez :</h4>
+ 
+ <table class="styled-table">
+
+      <tr>
+          <th>Id</th>    
+          <th>Titre</th>  
+          <th>Description</th>
+          <th>Chef</th> 
+          <th>   </th>
+          <th> </th>
+         
+       </tr>
+    @foreach(var service in Model)
+    {
+         <tr>
+          <td>@service.Id</td>    
+          <td>@service.Titre</td>
+          <td>@service.Description</td>
+          <td>@service.Chef.UserName</td>
+          <td> <button1 class="btn btn-success btn-xl" type="submit">@Html.ActionLink("Modifier", "ModifierService", "Villageois",new{@id = @service.Id}) </button1> </td>
+          <td> <button2 class="btn btn-danger btn-xl" type="submit">@Html.ActionLink("Supprimer", "DeleteService", "Villageois", new{@id = @service.Id})</button2> </td>
+         
+
+      </tr>
+      
+  
+      
+    }
+
+
+    </table>

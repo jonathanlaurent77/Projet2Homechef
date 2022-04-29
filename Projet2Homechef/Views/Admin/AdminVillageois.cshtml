@@ -1,0 +1,43 @@
+﻿@model List<Projet2Homechef.Models.Villageois>
+@{
+    ViewBag.Title = "AdminVillageois";
+
+}
+
+
+<h4>Liste des Villageois</h4>
+ 
+<table class="styled-table">
+
+      <tr>
+          <th>Nom</th>    
+          <th>Prenom</th>  
+          <th>DateDeNaissance</th>
+          <th>Email</th> 
+          <th>Tel</th> 
+          <th>Role</th> 
+          <th>   </th>
+          <th> </th>
+         
+       </tr>
+    @foreach(var villageois in Model)
+    {
+         <tr>
+          <td>@villageois.Nom</td>    
+          <td>@villageois.Prenom</td> 
+          <td>@villageois.DateDeNaissance.ToShortDateString()</td> 
+          <td>@villageois.Email</td> 
+          <td>@villageois.Tel</td> 
+          <td>@villageois.Role</td> 
+          <td> <button1 class="btn btn-success btn-xl" type="submit">@Html.ActionLink("Modifier", "ModifierVillageois", "Admin",new{@id = @villageois.Id}) </button1> </td>
+          <td> <button2 class="btn btn-danger btn-xl" type="submit">@Html.ActionLink("Supprimer", "DeleteVillageois", "Admin", new{@id = @villageois.Id})</button2> </td>
+         
+
+      </tr>
+      
+  
+      
+    }
+
+
+    </table>

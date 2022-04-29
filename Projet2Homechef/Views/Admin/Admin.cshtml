@@ -1,0 +1,28 @@
+﻿@model Projet2Homechef.ViewModels.AdminServicesVillageois
+using Projet2Homechef.Models.Personne;
+using Projet2Homechef.Models.Prestation;
+using Projet2Homechef.Models;
+@{
+    ViewBag.Title = "Admin Index";
+    Layout = "_LayoutHomeChefVuesSecondaires";
+}
+<h3 class="titre">Admin HomeChef</h3>
+  
+
+  @Html.Partial("AdminServices",Model.ListeDesServices)
+
+  @Html.Partial("AdminVillageois",Model.ListeDesVillageois)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

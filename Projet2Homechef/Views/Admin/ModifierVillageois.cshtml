@@ -1,0 +1,57 @@
+﻿@model Projet2Homechef.Models.Villageois
+
+@{
+    ViewBag.Title = "ModifierVillageois";
+    Layout = "_LayoutHomeChefVuesSecondaires";
+}
+
+<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Villageois</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-7">
+              <div class="form-floating mb-3">
+                  @using (Html.BeginForm())
+                        {
+                            <fieldset>
+                                <legend>Modifier un Villageois: </legend>
+                                @Html.LabelFor(m => Model.UserName)
+                                @Html.TextBoxFor(m => Model.UserName)
+                                @Html.ValidationMessageFor(m => Model.UserName)
+                                <br />
+                               @Html.LabelFor(m => Model.Password)
+                                @Html.TextBoxFor(m => Model.Password)
+                                @Html.ValidationMessageFor(m => Model.Password)
+                                <br />
+                                @Html.LabelFor(m => Model.Nom)
+                                @Html.TextBoxFor(m => Model.Nom)
+                                @Html.ValidationMessageFor(m => Model.Nom)
+                                <br />
+                                @Html.LabelFor(m => Model.Prenom)
+                                @Html.TextBoxFor(m => Model.Prenom)
+                                @Html.ValidationMessageFor(m => Model.Prenom)
+                                <br />
+                                @Html.LabelFor(m => Model.DateDeNaissance)
+                                @Html.TextBoxFor(m => Model.DateDeNaissance)
+                                @Html.ValidationMessageFor(m => Model.DateDeNaissance)
+                                <br />
+                                @Html.LabelFor(m => Model.Email)
+                                @Html.TextBoxFor(m => Model.Email)
+                                @Html.ValidationMessageFor(m => Model.Email)
+                                <br />
+                                @Html.LabelFor(m => Model.Tel)
+                                @Html.TextBoxFor(m => Model.Tel)
+                                @Html.ValidationMessageFor(m => Model.Tel)
+                                <br />
+
+                                <br />
+                                <input type="submit" value="Modifier" />
+                            </fieldset>
+                        }
+                
+            </div>
+        </div>

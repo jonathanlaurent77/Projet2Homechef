@@ -1,0 +1,47 @@
+﻿
+@using Projet2Homechef.Models
+@model List<Projet2Homechef.Models.Prestation.Service>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "_LayoutHomeChefVuesSecondaires";
+}
+
+<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Service</h2>
+		<!-- Icon Divider-->
+		<div class="divider-custom">
+			<div class="divider-custom-line"></div>
+			<div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+			<div class="divider-custom-line"></div>
+		</div>
+		<div class="row justify-content-start">
+
+			@foreach(var service in Model)
+			{
+				
+				<div class="card col-6 m-5" style="width: 18rem;">
+					<div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title">@service.Titre</h5>
+                            <div class="my-3">
+                               
+                            </div>
+                            <img src="@service.ImagePath" width="200" height="200" />
+                            
+                            <p class="card-text">@service.Description</p>
+							<p class="card-text">@service.Chef.UserName</p>
+
+                         </div>
+	
+					</div>
+				</div>
+			}
+			<div class="col-4 m-5" style="width: 18rem;">
+				<a href="/Service/CreerService">
+					<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" fill="black" class="align-middle bi bi-plus" viewBox="0 0 16 16">
+						<path class="plus" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+					</svg>
+				</a>
+			</div>
+
+		</div>

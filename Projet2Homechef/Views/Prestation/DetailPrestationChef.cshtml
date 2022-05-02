@@ -2,107 +2,202 @@
 @using Projet2Homechef.Models
 @model List<Projet2Homechef.Models.Prestation.Commande>
 
-@{
+
+
+	@{
     ViewBag.Title = "DetailPrestationChef";
     Layout = "_LayoutHomeChefVuesSecondaires";
+
 }
+<!DOCTYPE html>
+<html>
 
-<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Vue sur la prestation</h2>
-		<!-- Icon Divider-->
-		<div class="divider-custom">
-			<div class="divider-custom-line"></div>
-			<div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-			<div class="divider-custom-line"></div>
-		</div>
-		<div class="row justify-content-start">
 
-			@foreach(var commande in Model)
-			{
-				//les information du service, du chef et du villageois
-					<div>Le service rendu:</div>    
-					<div>@commande.Service.Titre</div>
+<head>
+    <title>Detail Prestation</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/csspresta.css">
+</head>
 
-					<div>Description:</div>    
-					<div>@commande.Service.Description</div>
-				
-					<div>Proposer par: </div>    
-					<div>@commande.Service.Chef.UserName</div>
-				
-					<div>@commande.Villageois.UserName</div>    
-					<div>Vous a demandé</div>
-				
-		<img src="@commande.Service.ImagePath" width="400" height="400" />
-		
-		//Première Etape de validation de la demande du villageois
-		if (@commande.Statut == 0)
-		{
-			<div>Le Villageois fait sa demande</div>
-			
-		}
-		else
-		{
-			<div>@commande.Demande</div>    				
-			<div>Prévu pour:</div>    
-			<div>@commande.DatePrestation</div>
-		}
+<body>
 
-		//Seconde Etape de l'établissement du devis du chef
-		if (@commande.Statut == 1)
-		{										
-			<form action="/Prestation/MonterDevis" method = "post"> 
+
+
+
+    <img src="/images/sousmenu detailpresta.png" width="100%" id="imgtitre" />
+
+    @foreach (var commande in Model)
+    {
+        <div class="divpresta1">
+            <div class="divprestatitre">
+                <h1 class=prestatitre1 >@commande.Service.Titre</h1>
+            </div>
+            <div class="divprestaimg">
+                <img src="@commande.Service.ImagePath" width="100%" />
+            </div>
+            <div class="divprestaacteurs">
+                <td> Service proposé par: </td>
+                <td>@commande.Service.Chef.UserName</td>
+                <br />
+                <td>Demandé par :</td>
+                <td>@commande.Villageois.UserName</td>
+                <br />
+                <td>Statut :</td>
+                  @if (@commande.Statut==1)
+                              {
+                             <td>En attente du devis du chef</td>
+                              }
+                        @if(@commande.Statut==2)
+                              {
+                             <td>En attente de la confirmation du devis par le villageois</td>
+                              }
+                        @if(commande.Statut==3)
+                              {
+                             <td>En attente de la réception de la prestation par le villageois</td>
+                              }
+                        @if(@commande.Statut==4)
+                              {
+                             <td>Prestation complétée</td>
+                              }
+                         @if(@commande.Statut==5)
+                              {
+                             <td>Matériel rendu</td>
+                              }
+            </div>
+        </div>
+
+        <div class="divpresta2">
+            <h2 class="prestatitre2">Description</h2>
+            <p>@commande.Service.Description</p>
+        </div>
+
+
+
+
+        //Première Etape de validation de la demande du villageois
+
+        if (@commande.Statut == 0)
+        {
+            <div class="divpresta3">
+                <h2 class="prestatitre2">Demande</h2>
+                <div>Le Villageois fait sa demande</div>
+            </div>
+        }
+        else
+        {
+            <div class="divpresta3">
+                <h2 class="prestatitre2">Demande</h2>
+                <div>@commande.Demande</div>
+                <div>Prévu pour:</div>
+                <div>@commande.DatePrestation</div>
+            </div>
+        }
+
+
+         
+
+
+        //Seconde Etape de l'établissement du devis du chef
+        if (@commande.Statut == 1)
+        {
+            <div class="divpresta4">
+                <h2 class="prestatitre2">Devis</h2>
+                <form action="/Prestation/MonterDevis" method = "post"> 
 				<input type="hidden" name="Id" value = @commande.Id />
-				<input type="text" name="Devis" placeholder="Je propose:" required=" "/>					
+				 <textarea  name="Devis" placeholder="Ce que vous proposez" required=" "></textarea>					
 				<td>Combien?</td>  
 				<input type="number" name="Cout" placeholder="..." required=""/>					
-			    <button type="submit" value="Valider"> Envoyer Devis</button>			
-			</form> 				
-		}
-		else if (@commande.Statut >= 1)
-		{
-			<div>La proposition du chef:</div>    
-			<div>@commande.Devis</div>
-				
-			<div>Pour le montant</div>    
-			<div>@commande.Cout</div>
-		}
-		
-		//Troisième Etape de l'acceptation du devis par le villageois
-		if (@commande.Statut == 2)
-		{										
-			<div>En attente de la confirmation du devis</div> 
-		}		
-		else if (@commande.Statut >= 2)
-		{
-			<div>@commande.ConfirmationDevis</div>
-		}
-		
-		//Quatrième Etape de le réception de la prestation par le villageois
-		if (@commande.Statut == 3)
-		{										
-			<div>En attente de la confirmation de la prestation</div>
-		}		
-		else if (@commande.Statut >= 3)
-		{
-			<div>@commande.ConfirmationPrestation</div>
-		}
-		
-		//Cinquième Etape de la récupération du matériel du chef
-		if (@commande.Statut == 4)
-		{										
-			<form action="/Prestation/ConfirmerRetourr" method = "post"> 	
-				<input type="hidden" name="Id" value = @commande.Id />
-				<input type="text" name="ConfirmationPrestation" placeholder="Cela vous contient" required=" "/>															
-			    <button type="submit" value="Valider">Confirmation</button>			
-			</form>
-		}		
-		else if (@commande.Statut >= 4)
-		{
-			<div>@commande.ConfirmationRetour</div>
-		}
-		
-          
-       
-			}
-			
+			    <button class="btn btn-success btn" type="submit" value="Valider"> Envoyer Devis</button>			
+			</form> 
+            </div>
+        }
+        else if (@commande.Statut >= 1)
+        {
+            <div class="divpresta4">
+                <h2 class="prestatitre2">Devis</h2>
+                <div>La proposition du chef:</div>
+                <div>@commande.Devis</div>
 
-		</div>
+                <div>Pour le montant</div>
+                <div>@commande.Cout</div>
+            </div>
+        }
+
+
+
+        //Troisième Etape de l'acceptation du devis par le villageois
+        if (@commande.Statut == 2)
+        {
+            <div class="divpresta5">
+                <h2 class="prestatitre2">Confirmation devis</h2>
+               <div>En attente de la confirmation du devis</div> 
+            </div>
+        }
+        else if (@commande.Statut >= 2)
+        {
+            <div class="divpresta5">
+                <h2 class="prestatitre2">Confirmation devis</h2>
+                <div>@commande.ConfirmationDevis</div>
+            </div>
+        }
+
+
+
+        //Quatrième Etape de le réception de la prestation par le villageois
+        if (@commande.Statut == 3)
+        {
+            <div class="divpresta6">
+                <h2 class="prestatitre2">Confirmation réalisation de la Prestation</h2>
+
+               <div>En attente de la confirmation de la prestation par le Villageois</div>
+            </div>
+        }
+        else if (@commande.Statut >= 3)
+        {
+            <div class="divpresta6">
+                <h2 class="prestatitre2">Confirmation réalisation de la Prestation</h2>
+                <div>@commande.ConfirmationPrestation</div>
+            </div>
+        }
+
+
+
+        //Cinquième Etape de la récupération du matériel du chef
+        if (@commande.Statut == 4)
+        {
+            <div class="divpresta7">
+                <h2 class="prestatitre2">Confirmation du retour du Materiel</h2>
+               <form action="/Prestation/ConfirmerRetourr" method = "post"> 	
+				<input type="hidden" name="Id" value = @commande.Id />
+                 <textarea  name="ConfirmationPrestation" placeholder="Commentaire sur la reception des biens" required=" "></textarea>																
+			    <button class="btn btn-success btn" type="submit" value="Valider">Confirmation</button>			
+			</form>
+            </div>
+
+        }
+        else if (@commande.Statut >= 4)
+        {
+            <div class="divpresta7">
+                <h2 class="prestatitre2">Confirmation du retour du Materiel</h2>
+                <div>@commande.ConfirmationRetour</div>
+            </div>
+        }
+
+
+
+    }
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

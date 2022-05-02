@@ -1,0 +1,41 @@
+﻿ @model Projet2Homechef.Models.Villageois
+
+
+@{
+    ViewBag.Title =  "Villageois";
+   
+}
+<head>
+ <link href="~/css/styleHomechef.css" rel="stylesheet" />
+ </head>
+<h2><img src="/images/sousmenu mesinfos.png"  /></h2>
+	
+
+<body>
+    <section id="contact">
+	 
+	  <div class="container">
+				
+				<form action="/Admin/ModifierVillageois2" method = "post">
+					<input type="hidden" name="Id" value=@Model.Id />						
+					<input type="text"  name="UserName"  value=@Model.UserName />
+				    <input type="password"  name="Password"  value=@Model.Password />    									
+					<input value=@Model.Nom />
+					<input value=@Model.Prenom />
+					<input value=@Model.DateDeNaissance />
+					<input value=@Model.Role/>
+					<input value=@Model.Email/>
+					<input value=@Model.Tel/>
+					
+			         <button type="submit" value="Valider"/> Modifier</button>
+					
+									<br/>
+			
+					
+				</form>
+				
+		</div>
+      </section>
+
+
+</body>

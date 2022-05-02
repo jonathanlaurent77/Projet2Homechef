@@ -33,8 +33,8 @@
 								<p class="card-text">Proposé par :</p>
 								<p class="card-text">@service.Chef.UserName</p>
 								<div id="right">
-								<button1 class="btn btn-success btn-xl" type="submit">@Html.ActionLink("Demander", "Demander", "Service",  new {idService =@service.Id} ) </button1>
-							</div>
+								<button1 class="btn btn-success btn-xl" type="submit" href="#connexion">Connexion</button1>
+								</div>
 							</div>
 							</div>
                         </div>
@@ -55,4 +55,7 @@
 
 		</div>
 
-		
+		@*<div class="row">
+			<div class="col-lg-4 ms-auto"><p class="lead">Cette application a été conçue afin que vous votiez pour vos sejours favoris</p></div>
+			<div class="col-lg-4 me-auto"><p class="lead">A la fin de chaque sondage, un sejour sera choisi.</p></div>
+		</div>*@

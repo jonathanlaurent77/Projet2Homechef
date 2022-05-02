@@ -26,8 +26,28 @@ table{
     justify-content:center;
 }
 
-img {
+/*img {
     width:100%;
+}*/
+
+#imgTitre {
+    width: 100%;
+}
+
+#img_logo {
+    text-align: center;
+}
+
+#right {
+    text-align: right;
+}
+
+#center {
+    text-align: center;
+}
+
+#imgCard {
+    text-align: left;
 }
 
 span{

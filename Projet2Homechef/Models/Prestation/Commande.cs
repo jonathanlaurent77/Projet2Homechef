@@ -27,6 +27,14 @@ namespace Projet2Homechef.Models.Prestation
         public string ReclamationVillageois { get; set; }
         public string ReclamationChef { get; set; }
         public string ReponseGestionnaire { get; set; }
+
+        /*public string MessageStatut(Statut)
+        {
+            return (message);
+        }*/
+
+
+
     }
 }
 

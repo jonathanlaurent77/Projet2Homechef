@@ -82,7 +82,8 @@ namespace Projet2Homechef.Controllers
                         ViewData["message"] = "Ce villageois n'est pas dans la base";
                         return View("Error");
                     }
-                    return View(villageois);
+                    /*return View(villageois);*/
+                    return Redirect("/home");
                 }
             }
             return View("Error");
@@ -98,6 +99,7 @@ namespace Projet2Homechef.Controllers
                 {
                     dal.ModifierVillageois(id, UserName, Password, Nom, Prenom, DateDeNaissance, email, tel);
                     return RedirectToAction("ModifierVillageois", new { @id = id });
+                   /* return RedirectToAction("/Home", new { @id = id });*/
                 }
             }
             else
@@ -105,6 +107,9 @@ namespace Projet2Homechef.Controllers
                 return View("Error");
             }
         }
+
+       
+        
         public IActionResult ModifierService(int id)
         {
             if (id != 0)

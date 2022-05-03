@@ -4,31 +4,39 @@
 
 @{
     ViewBag.Title = "PrestationChef";
-	Layout = "_LayoutHomeChefVuesSecondaires";
+	
 }
-
-@*<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Service</h2>*@
-		<!-- Icon Divider-->
-		<div class="divider-custom">
-			<div class="divider-custom-line"></div>
-			<div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-			<div class="divider-custom-line"></div>
+<h2><img id ="imgTitre" src="/images/sousmenu presta.png"  /></h2>
+        <div class="divider-custom">
+			<h2>Mes services en cours</h2>
+			
 		</div>
-		<div class="row justify-content-start">
+<table class="styled-table">
 
-			@foreach(var commande in Model)
-			{
-				
-				<tr>
+      <tr>
+          <th>Id</th>    
+          <th>Titre</th>  
+          <th>Description</th>
+          <th>Client</th> 
+          <th>   </th>
+          
+         
+       </tr>
+    @foreach(var commande in Model)
+    {
+         <tr>
           <td>@commande.Id</td>    
           <td>@commande.Service.Titre</td>
           <td>@commande.Service.Description</td>
           <td>@commande.Villageois.UserName</td>
           
-          <td> <button1 class="btn btn-success btn-xl" type="submit">@Html.ActionLink("Détail", "DetailPrestationChef", "Prestation",new{@id = @commande.Id}) </button1> </td>
+          <td> <button1 class="btn btn-success btn" type="submit">@Html.ActionLink("Détail", "DetailPrestationChef", "Prestation",new{@id = @commande.Id}) </button1> </td>
 
       </tr>
-			}
-			
+      
+  
+      
+    }
+</table>
 
-		</div>
+

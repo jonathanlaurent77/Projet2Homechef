@@ -1,5 +1,4 @@
-﻿
-@using Projet2Homechef.Models
+﻿@using Projet2Homechef.Models
 @model List<Projet2Homechef.Models.Prestation.Service>
 
 @{
@@ -7,7 +6,7 @@
     
 }
 
-<h2><img id ="imgTitre" src="/images/sousmenu catalog.png"  /></h2>
+<h2><img id ="imgTitre" src="/images/sousmenu meservices.png"  /></h2>
 		
 		<div class="row justify-content-start">
 
@@ -33,25 +32,26 @@
 								<p class="card-text">Proposé par :</p>
 								<p class="card-text">@service.Chef.UserName</p>
 								<div id="right">
-								<button1 class="btn btn-success btn-xl" type="submit">@Html.ActionLink("Demander", "Demander", "Service",  new {idService =@service.Id} ) </button1>
-							</div>
+								<td> <button1 class="btn btn-success btn-xl" type="submit">@Html.ActionLink("Modifier", "ModifierService", "Villageois",new{@id = @service.Id}) </button1> </td>
+								<td> <button2 class="btn btn-danger btn-xl" type="submit">@Html.ActionLink("Supprimer", "DeleteService", "Villageois", new{@id = @service.Id})</button2> </td>
+								</div>
 							</div>
 							</div>
                         </div>
 						
 						<div>
-   
-							<td>  </td>
-                            
 
-                        </div>
-                        
-						
-
+                        </div>                        						
 					</div>
 				</div>
 			}
-			
+			<div class="col-4 m-5" style="width: 18rem;">
+				<a href="/Service/CreerService">
+					<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" fill="black" class="align-middle bi bi-plus" viewBox="0 0 16 16">
+						<path class="plus" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+					</svg>
+				</a>
+			</div>
 
 		</div>
 

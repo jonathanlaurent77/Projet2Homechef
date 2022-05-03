@@ -18,7 +18,7 @@
 
 <body id="page-top">
     <div>
-        <img src="/images/pageDeGardeHomeChef.webp"  />
+        <img id ="imgTitre" src="/images/pageDeGardeHomeChef.webp"  />
     </div>
     <div class="d-flex flex-column justify-content-between vh-100">
 
@@ -40,8 +40,8 @@
                                 if (User.Identity.IsAuthenticated)
                                 {
                                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#catalogue">Catalogue</a></li> 
-                                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#prestations">Suivi des prestations</a></li>
                                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#services">Mes services</a></li>
+                                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#prestations">Suivi des prestations</a></li>                                   
                                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#infos">Mes infos</a></li>
                                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/Login/Deconnexion">Déconnexion</a></li>
                                 }
@@ -74,7 +74,7 @@
                 <div class="container">
                     <div class="row">
                         <!-- Footer Location-->
-                        <div class="col-lg-4 mb-5 mb-lg-0">
+                        <div class="col">
                             <h4 class="text-uppercase mb-4">Un Projet ISIKA</h4>
                             <p class="lead mb-0">
                                 Groupe 3
@@ -83,7 +83,7 @@
                             </p>
                         </div>
                         <!-- Footer Social Icons-->
-                        <div class="col-lg-4 mb-5 mb-lg-0">
+                        <div class="col">
                             <h4 class="text-uppercase mb-4">Ecrivez-nous ! <br/> Partagez-nous !</h4>
                             <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
                             <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
@@ -91,26 +91,23 @@
                       
                         </div>
                         <!-- Footer About Text-->
-                        <div class="col-lg-4">
+                     
+                        <div class="col">
                             <h4 class="text-uppercase mb-4">Nos autres projets</h4>
                             <p class="lead mb-0">
-                               Toutes les recettes glanées par les HomeChefs Jon, Ben et Amo<br/>
-                                <a href="http://www.marmiton.com" target="_blank">www.nosrecettes.com</a>
-								                               .
+                               Toutes nos recettes <br/>
+                                <a href="http://www.marmiton.com" target="_blank">www.nosrecettes.com</a>		
                             </p>
 							<p class="lead mb-0">
-                               un nouveau style de moteur de recherche
+                               un nouveau style de moteur de recherche<br/>
+                               
                                 <a href="http://www.google.com" target="_blank">www.cherchetoimeme.com</a>
-								                               .
-                            </p>
-								<p class="lead mb-0">
-                               le blog de voyage de Jon
-                                <a href="http://www.tripadvisor.com" target="_blank">www.lesvoyagesdejon.com</a>
-								                               .
-                            </p>
+							</p>	                                       
+								
                         </div>
                     </div>
                 </div>
+
             </footer>
             <!-- Copyright Section-->
             <div class="copyright py-4 text-center text-white">

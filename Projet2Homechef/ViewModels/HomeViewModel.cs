@@ -15,6 +15,7 @@ namespace Projet2Homechef.ViewModels
 
         public List<Villageois> ListeDesVillageois { get; set; }    
         public List<Commande> ListeDesCommandes { get; set; }
+        public List<Commande> ListeDesCommandes2 { get; set; }
         public Villageois VillageoisConnected { get; set;  }
 
         //

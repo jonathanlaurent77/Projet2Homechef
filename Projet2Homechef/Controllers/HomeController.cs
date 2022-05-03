@@ -21,7 +21,10 @@ namespace Projet2Homechef.Controllers
 
                 hvm.ListeDesVillageois = dal.ObtientTousLesVillageois();
                 hvm.ListeDesServices = dal.ObtientTousLesServices().Where(v => v.Chef.Id == (Convert.ToInt32(userId))).ToList();
-                
+
+                hvm.ListeDesCommandes = dal.ObtientToutesLesCommandes().Where(i => i.Service.Chef.Id == (Convert.ToInt32(userId))).ToList();
+                hvm.ListeDesCommandes2 = dal.ObtientToutesLesCommandes().Where(i => i.Villageois.Id == (Convert.ToInt32(userId))).ToList();
+
                 return View(hvm);
 
             }

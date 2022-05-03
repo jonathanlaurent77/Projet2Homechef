@@ -1,0 +1,116 @@
+@font-face {
+	font-family: 'ARJULIAN';
+	src: URL("../ARJULIAN.ttf") format('truetype');
+}
+
+.parent {
+    
+    margin: 20px 0;
+    padding: 10px;
+	display : flex;
+    
+	background-color : grey;
+}
+
+
+.divprestatitre {
+	float: right;
+	width: 60%;
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 7px;
+	color: #4472C4;
+	font-family: 'ARJULIAN';
+	font-size: 30px;
+	background-color: white;
+}
+	.divpresta1{
+		float : left;
+		width:98%;
+		margin:7px;
+		background-color : white;
+	}
+	.divprestaimg{
+		float : left;
+		margin:15px;
+		width:30%;
+		
+		
+	}
+	#imgtitre{
+		margin-left:7px;
+		
+	}
+
+.divprestaacteurs {
+	float: right;
+	width: 40%;
+	text-align: right;
+	margin-bottom: 15px;
+	margin-top: 7px;
+	margin-right: 7px;
+	background-color: white;
+	font-family: 'calibri';
+	color: grey;
+	font-size: 20px;
+}
+
+.divpresta2 {
+	float: left;
+	margin: 7px;
+	width: 98%;
+	height: 50;
+	background-color: white;
+	padding: 7px;
+	font-family: 'calibri';
+	color: grey;
+	font-size: 18px;
+}
+.prestatitre2 {
+	font-family: 'ARJULIAN';
+	color: white;
+	background-color: #4472C4;
+	padding: 14px;
+	padding-left: -2px;
+}
+
+.prestatitre1 {
+	font-family: 'ARJULIAN';
+	color: #4472C4;
+	background-color: white;
+	padding: 14px;
+	padding-left: -2px;
+}
+	.divpresta3{
+	float : left;
+	margin:7px;
+	width : 48%;
+	
+	}
+
+	.divpresta4{
+	float : left;
+	margin:7px;
+	width : 48%;
+	
+	}
+.divpresta5 {
+	float: left;
+	margin: 7px;
+	width: 48%;
+}
+.divpresta6 {
+	float: left;
+	margin: 7px;
+	width: 48%;
+}
+.divpresta7 {
+	float: left;
+	margin: 7px;
+	width: 48%;
+}
+.textlabelpresta {
+	color: #C55A11;
+	font-family:'AR ESSENCE';
+
+}

@@ -1,35 +1,40 @@
 ﻿ @model Projet2Homechef.Models.Villageois
 
+
 @{
-    ViewBag.Title = "Villageois";
-    Layout = "_LayoutHomechef";
+    ViewBag.Title =  "Villageois";
+   
 }
+<head>
+ <link href="~/css/styleHomechef.css" rel="stylesheet" />
+ </head>
+<h2><img id ="imgTitre" src="/images/sousmenu mesinfos.png"  /></h2>
 
-<h3 class="titre">Bonjour @Model.UserName"</h3>
+<body>
+    <section id="contact">
+	 
+	  <div class="container">
+				
+				<form action="/Admin/ModifierVillageois" method = "post">
+					<input type="hidden" name="Id" value=@Model.Id />					
+					<input type="text"  name="UserName"  value=@Model.UserName />
+				    <input type="password"  name="Password"  value=@Model.Password />    									
+					<input type="text"  name="Nom" value=@Model.Nom />
+					<input type="text"  name="Prenom" value=@Model.Prenom />
+					<input type="datetime"  name="DateDeNaissance" value=@Model.DateDeNaissance />
+					<input type="text"  name="Role" value=@Model.Role />
+					<input type="email"  name="Email" value=@Model.Email />
+					<input type="tel"  name="Tel" value=@Model.Tel />
+					
+			         <button type="submit" value="Valider"/> Modifier</button>
+					
+									<br/>
+			
+					
+				</form>
+				
+		</div>
+      </section>
 
 
-@*
- <h4>Liste des prestations</h4>
- 
- <table border="1">
-      <tr>
-          <th>Id</th>    
-          <th>Refuser</th>
-          <th>Supprimer</th>
-       </tr>
-    @foreach(var prestation in Model)
-    {
-         <tr>
-          <td>@prestation.Id</td>    
-          <td> <button1 class="btn btn-success btn-xl" type="submit">@Html.ActionLink("Valider", "ValiderVillageois", "Gestionnaire",new{@id = @prestation.Id}) </button1> </td>
-          <td> <button2 class="btn btn-danger btn-xl" type="submit">@Html.ActionLink("Refuser", "DeleteVillageois", "Gestionnaire", new{@id = @prestation.Id})</button2> </td>
-         
-
-      </tr>
-
-      
-    }
-
-      
-  </table>*@
-  
+</body>

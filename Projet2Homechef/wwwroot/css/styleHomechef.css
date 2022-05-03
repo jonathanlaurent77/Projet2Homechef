@@ -98,9 +98,9 @@ section#contact .container {
 /**/
 #img_logo2{
 	
-	/*float : center;*/
+	float : center;
 	width: 250px;
-	/*align-items : center*/
+	align-items : center
 }
  
  #img_logo{
@@ -323,12 +323,12 @@ sup {
 }
 
 a {
-    color: #1abc9c;
+    color: #fff;
     text-decoration: underline;
 }
 
     a:hover {
-        color: #15967d;
+        color: #fff;
     }
 
     a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -1576,7 +1576,8 @@ progress {
 
     .col-lg-4 {
         flex: 0 0 auto;
-        width: 33.33333333%;
+        /*width: 33.33333333%;*/
+        width: 50%;
     }
 
     .col-lg-5 {
@@ -3395,12 +3396,12 @@ textarea.form-control-lg {
         background-color: #ffc107;
         border-color: #ffc107;
     }
-
+/*repere*/
 .btn-danger {
     color: #fff;
-    background-color: #dc3545;
-    border-color: #dc3545;
-}
+    background-color: #C55A11;
+    border-color: #C55A11;
+}s
 
     .btn-danger:hover {
         color: #fff;
@@ -11623,8 +11624,8 @@ html {
     }
 
 .btn-xl {
-    padding: 1rem 1.75rem;
-    font-size: 1.25rem;
+    /*padding: 1rem 1.75rem;
+    font-size: 1.25rem;*/
 }
 
 .btn-social {

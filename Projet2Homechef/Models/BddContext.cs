@@ -26,52 +26,52 @@ namespace Projet2Homechef.Models
                 new Villageois
                 {
                     Id = 1,
-                    UserName = "111",
+                    UserName = "PastaMaestro",
                     Password = "azerty",
                     Nom = "Bucharati",
                     Prenom = "Luigi",
                     DateDeNaissance = new DateTime(1990, 03, 02),
-                    Email = "aa@hotmail.com",
+                    Email = "lbucharati@hotmail.com",
                     Tel = "0123456789",
                     Role = "Villageois",
-                    Valider = 0
+                    Valider = 1
                 },
               new Villageois
               {
                   Id = 2,
-                  UserName = "333",
+                  UserName = "UnitedKate",
                   Password = "azerty",
-                  Nom = "Gloup",
-                  Prenom = "Luigi",
+                  Nom = "Morgan",
+                  Prenom = "Kathie",
                   DateDeNaissance = new DateTime(1990, 03, 02),
-                  Email = "aa@hotmail.com",
+                  Email = "morgan@hotmail.com",
                   Tel = "0123456789",
                   Role = "Villageois",
-                  Valider = 0
+                  Valider = 1
 
               },
 
                 new Villageois
                 {
                     Id = 3,
-                    UserName = "444",
+                    UserName = "Gourmand",
                     Password = "azerty",
-                    Nom = "Fra ncois",
-                    Prenom = "Luigi",
+                    Nom = "Lalane",
+                    Prenom = "Francis",
                     DateDeNaissance = new DateTime(1990, 03, 02),
-                    Email = "aa@hotmail.com",
+                    Email = "fralala@hotmail.com",
                     Tel = "0123456789",
                     Role = "Villageois",
-                    Valider = 0
+                    Valider = 1
 
                 },
                   new Villageois
                   {
                       Id = 4,
-                      UserName = "555",
+                      UserName = "Maximal",
                       Password = "azerty",
-                      Nom = "FFF",
-                      Prenom = "Luigi",
+                      Nom = "Reno",
+                      Prenom = "Maxine",
                       DateDeNaissance = new DateTime(1990, 03, 02),
                       Email = "aa@hotmail.com",
                       Tel = "0123456789",
@@ -82,12 +82,12 @@ namespace Projet2Homechef.Models
                     new Villageois
                     {
                         Id = 5,
-                        UserName = "3EE",
+                        UserName = "Alexia",
                         Password = "azerty",
-                        Nom = "prrr",
-                        Prenom = "Luigi",
+                        Nom = "Alberta",
+                        Prenom = "Alexandra",
                         DateDeNaissance = new DateTime(1990, 03, 02),
-                        Email = "aa@hotmail.com",
+                        Email = "alexandraalberta@hotmail.com",
                         Tel = "0123456789",
                         Role = "Villageois",
                         Valider = 0
@@ -96,10 +96,10 @@ namespace Projet2Homechef.Models
                       new Villageois
                       {
                           Id = 6,
-                          UserName = "4gg4",
+                          UserName = "ViolinTanya",
                           Password = "azerty",
-                          Nom = "FFF",
-                          Prenom = "Luigi",
+                          Nom = "Turner",
+                          Prenom = "Tatyana",
                           DateDeNaissance = new DateTime(1990, 03, 02),
                           Email = "aa@hotmail.com",
                           Tel = "0123456789",
@@ -122,46 +122,47 @@ namespace Projet2Homechef.Models
                 {
                     Id = 1,
                     Titre = "Gateau au chocolat",
-                    Description = "Faire un gateau au chocolat",
+                    Description = "Une femme dira toujours oui à du au chocolat",
                     Valider = 1,
-                    Chef = villageoisA,
+                    Chef = villageoisB,
                     ImagePath = "/images/gateauchoco.jpg"
                 },
                 new Service
                 {
                     Id = 2,
-                    Titre = "Machine à pain",
-                    Description = "Prêt d'une machine à pain",
+                    Titre = "Brownies",
+                    Description = "Du chocolat portant le goût de l'amérique",
                     Valider = 1,
                     Chef = villageoisB,
-                    ImagePath = "/images/machinepain.jpg"
-                },
+                    ImagePath = "/images/brownie.jpg"
+                },               
                 new Service
                 {
                     Id = 3,
                     Titre = "Tarte aux cocombre",
-                    Description = "C'est bon les tartes aux cocombres",
-                    Valider = 0,
-                    Chef = villageoisC,
+                    Description = "Un challenge accepté, un challenge complété",
+                    Valider = 1,
+                    Chef = villageoisB,
                     ImagePath = "/images/tartecocombre.jpg"
                 },
                 new Service
                 {
                     Id = 4,
-                    Titre = "Tondeuse à gazon",
-                    Description = "Pour la pelouse et les barbus",
-                    Valider = 0,
-                    Chef = villageoisD,
-                    ImagePath = "/images/tondeuse.jpg"
+                    Titre = "Tarte aux citrons",
+                    Description = "Avec cette tarte le citron redevient à la mode",
+                    Valider = 1,
+                    Chef = villageoisB,
+                    ImagePath = "/images/tartecitron.jpg"
                 },
+               
                 new Service
                 {
                     Id = 5,
-                    Titre = "Tarte aux cocombre",
-                    Description = "C'est bon les tartes aux cocombres",
-                    Valider = 0,
+                    Titre = "Four à pain",
+                    Description = "Faites cuir votre pain tous les dimanche matin",
+                    Valider = 1,
                     Chef = villageoisA,
-                    ImagePath = "/images/tartecocombre.jpg"
+                    ImagePath = "/images/fourapain.jpg"
                 },
                 new Service
                 {
@@ -169,12 +170,42 @@ namespace Projet2Homechef.Models
                     Titre = "Machine à pain",
                     Description = "Prêt d'une machine à pain",
                     Valider = 1,
-                    Chef = villageoisB,
-                    ImagePath = "/images/machinepain.jpg"
-                }
+                    Chef = villageoisA,
+                    ImagePath = "/images/machineapain.jpg"
+                },
+                new Service
+                {
+                    Id = 7,
+                    Titre = "Pate à pain",
+                    Description = "Prête à mettre au four",
+                    Valider = 1,
+                    Chef = villageoisA,
+                    ImagePath = "/images/pateapain.jpg"
+                },
+                new Service
+                {
+                    Id = 8,
+                    Titre = "Autentique tagliatelle",
+                    Description = "A gouter pour comprendre l'engouement",
+                    Valider = 1,
+                    Chef = villageoisA,
+                    ImagePath = "/images/patefraiche.jpg"
+                },
+                new Service
+               {
+                   Id = 9,
+                   Titre = "Tondeuse à gazon",
+                   Description = "Pour la pelouse et les barbus",
+                   Valider = 0,
+                   Chef = villageoisD,
+                   ImagePath = "/images/tondeuse.jpg"
+               }
             );
 
             Service ServiceA = this.Services.Find(1);
+            Service ServiceB = this.Services.Find(2);
+            Service ServiceE = this.Services.Find(5);
+
 
             this.Commandes.AddRange(
 
@@ -183,7 +214,7 @@ namespace Projet2Homechef.Models
                     Id = 1,
                     Service = ServiceA,
                     Statut = 1,
-                    Villageois = villageoisB,
+                    Villageois = villageoisA,
                     Demande = "1 J'aime les gateau au chocolat, pour mardi prochain",
                     DatePrestation = DateTime.Now
                 },
@@ -193,14 +224,14 @@ namespace Projet2Homechef.Models
                     Id = 2,
                     Service = ServiceA,
                     Statut = 2,
-                    Villageois = villageoisB,
+                    Villageois = villageoisC,
                     Demande = "2 J'aime les gateau au chocolat, pour mardi prochain",
                     DatePrestation = DateTime.Now,
                     Devis = "5 euro et un sourire!",
                     Cout = 5
                 },
 
-                new Commande
+                /*new Commande
                 {
                     Id = 3,
                     Service = ServiceA,
@@ -225,14 +256,29 @@ namespace Projet2Homechef.Models
                     Cout = 5,
                     ConfirmationDevis = "Cela me convient sauf pour le sourire!",
                     ConfirmationPrestation = "Je l'ai apprécié ce gateau"
-                },
+                },*/
 
                 new Commande
                 {
                     Id = 5,
+                    Service = ServiceE,
+                    Statut = 3,
+                    Villageois = villageoisB,
+                    Demande = "Je souhaite utiliser votre four pour me faire des petits pains",
+                    DatePrestation = DateTime.Now,
+                    Devis = "Avec plaisir, la première fois c'est offert!",
+                    Cout = 0,
+                    ConfirmationDevis = "J'en ferai en supplément et je vous ferai gouter!"
+                    
+
+                },
+
+                new Commande
+                {
+                    Id = 6,
                     Service = ServiceA,
                     Statut = 5,
-                    Villageois = villageoisB,
+                    Villageois = villageoisD,
                     Demande = "5 J'aime les gateau au chocolat, pour mardi prochain",
                     DatePrestation = DateTime.Now,
                     Devis = "5 euro et un sourire!",

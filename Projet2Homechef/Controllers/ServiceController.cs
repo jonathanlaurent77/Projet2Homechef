@@ -38,7 +38,7 @@ namespace Projet2Homechef.Controllers
             var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             int IdChef =Convert.ToInt32(userId);
             dal.CreerService(service.Titre, service.Description, "/images/"+service.Image.FileName, IdChef);
-            return RedirectToAction("Index");
+            return Redirect("/home");
         }
 
         public ActionResult Index()
@@ -62,12 +62,29 @@ namespace Projet2Homechef.Controllers
             return View(listeDesServices);
         }
 
+        public ActionResult CatalogueHomechef3()
+        {
+            List<Service> listeDesServices = dal.ObtientTousLesServices().Where(v => v.Valider == 1).ToList();
+            List<Villageois> listeDesVillageois = dal.ObtientTousLesVillageois();
+            return View(listeDesServices);
+        }
+
         public ActionResult MonCatalogue()
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             int IdChef = Convert.ToInt32(userId);
             List<Villageois> listeDesVillageois = dal.ObtientTousLesVillageois();
             List<Service> listeDesServices = dal.ObtientTousLesServices().Where(i => i.Chef.Id == IdChef).ToList();           
+
+            return View(listeDesServices);
+        }
+
+        public ActionResult MonCatalogue2()
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            int IdChef = Convert.ToInt32(userId);
+            List<Villageois> listeDesVillageois = dal.ObtientTousLesVillageois();
+            List<Service> listeDesServices = dal.ObtientTousLesServices().Where(i => i.Chef.Id == IdChef).ToList();
 
             return View(listeDesServices);
         }

@@ -87,7 +87,8 @@ namespace Projet2Homechef.Controllers
             
             dal.AjouterDemande(Id, Demande, DatePrestation);
 
-            return Redirect("PrestationVillageois");
+            /*return Redirect("PrestationVillageois");*/
+            return Redirect("/home");
         }
 
         [HttpPost]
@@ -95,8 +96,8 @@ namespace Projet2Homechef.Controllers
         {
 
             dal.MonterDevis(Id, Devis, Cout);
-
-            return Redirect("PrestationChef");
+            return Redirect("/home");
+            /*return Redirect("PrestationChef");*/
         }
 
         [HttpPost]
@@ -104,8 +105,8 @@ namespace Projet2Homechef.Controllers
         {
 
             dal.ConfirmerDevis(Id, ConfirmationDevis);
-
-            return Redirect("PrestationVillageois");
+            return Redirect("/home");
+            /*return Redirect("PrestationVillageois");*/
         }
 
         [HttpPost]
@@ -113,8 +114,8 @@ namespace Projet2Homechef.Controllers
         {
 
             dal.ConfirmationPrestation(Id, ConfirmationPrestation);
-
-            return Redirect("PrestationVillageois");
+            return Redirect("/home");
+            /*return Redirect("PrestationVillageois");*/
         }
 
         [HttpPost]
@@ -122,8 +123,8 @@ namespace Projet2Homechef.Controllers
         {
 
             dal.ConfirmerRetour(Id, ConfirmationRetour);
-
-            return Redirect("PrestationChef");
+            return Redirect("/home");
+            /*return Redirect("PrestationChef");*/
         }
     }
 }

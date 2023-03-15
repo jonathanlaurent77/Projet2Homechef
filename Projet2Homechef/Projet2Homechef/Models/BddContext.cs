@@ -305,7 +305,8 @@ namespace Projet2Homechef.Models
 
             if (System.Diagnostics.Debugger.IsAttached)
             {
-                optionsBuilder.UseMySql("server=localhost;user id=root;password=rrrrr;database=homechef"); ;
+                //optionsBuilder.UseMySql("server=localhost;user id=root;password=rrrrr;database=homechef");
+                optionsBuilder.UseMySql("server=eu-cdbr-west-03.cleardb.net;user id=be23fa12f659b9;password=16653183;database=heroku_b5493bc21af2626");
             }
             else
             {

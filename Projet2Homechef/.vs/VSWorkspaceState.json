@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Models",
+    "\\Views\\Home",
+    "\\Views\\Login",
+    "\\Views\\Shared"
+  ],
+  "SelectedNode": "\\Models\\BddContext.cs",
+  "PreviewInSolutionExplorer": false
+}

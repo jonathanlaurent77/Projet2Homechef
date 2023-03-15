@@ -15,26 +15,29 @@
     <section id="contact">
 	 
 	  <div class="container">
-				
+            <form><legend>Login</legend></form>
 				@*<form action="/home/CreerAdhesion" method = "post">*@
 					@using (Html.BeginForm("login","login"))
                 {
-                    <div class="form-floating mb-3">
-                        @Html.TextBoxFor(model => model.Villageois.UserName, new { @class = "form-control", placeholder = "Nom" })
+                <!--<div class="form-floating mb-3">-->
+                <div>
+                    @Html.TextBoxFor(model => model.Villageois.UserName, new { @class = "form-control", placeholder = "UserName" })
                         @Html.LabelFor(model => model.Villageois.UserName)
                         @Html.ValidationMessageFor(model =>model.Villageois.UserName)
                     </div>
-
-                    <div class="form-floating mb-3">
-                        @Html.TextBoxFor(model => model.Villageois.Password, new { @type="password", @class = "form-control", placeholder = "Téléphone" })
+                <br />
+                <!--<div class="form-floating mb-3">-->
+                    <div>
+                    @Html.TextBoxFor(model => model.Villageois.Password, new { @type="password", @class = "form-control", placeholder = "password" })
                         @Html.LabelFor(model => model.Villageois.Password)
                         @Html.ValidationMessageFor(model => model.Villageois.Password)
                     </div>
-
+                    <br/>
          
                     <!-- Submit Button-->
-                    <button class="btn btn-primary btn-xl" type="submit">Se Connecter</button>
-                }		
+                <button class="btn btn-primary btn-xl" type="submit">Se Connecter</button>
+                }
+            
 				@*</form>*@
 				</div>
       </section>

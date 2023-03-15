@@ -28,7 +28,7 @@ namespace Projet2Homechef.Controllers
         [HttpPost]
         public IActionResult CreerService(Service service)
         {
-            string uploads = Path.Combine(_webEnv.WebRootPath, "images");
+            /*string uploads = Path.Combine(_webEnv.WebRootPath, "images");
             string filePath = Path.Combine(uploads, service.Image.FileName);
             using (Stream fileStream = new FileStream(filePath, FileMode.Create))
             {
@@ -36,8 +36,8 @@ namespace Projet2Homechef.Controllers
             }
             
             var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
-            int IdChef =Convert.ToInt32(userId);
-            dal.CreerService(service.Titre, service.Description, "/images/"+service.Image.FileName, IdChef);
+            int IdChef =Convert.ToInt32(userId);*/
+            //dal.CreerService(service.Titre, service.Description, "/images/"+service.Image.FileName, IdChef);
             return Redirect("/home");
         }
 

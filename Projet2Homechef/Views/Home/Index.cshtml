@@ -4,100 +4,105 @@
     Layout = "_LayoutHomechef";
 	//Layout = "_LayoutChoixSejour";
 }
+
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>HomeChefIndex</title>
-		<meta charset="utf-8"</meta>
-		<link rel="stylesheet" href="StyleSheet.css">
-		
-	</head>
-	
-	<body>
-	
-		<header>
-	
-			
-		</header>
-	
-		@{
+<head>
+    <title>HomeChefIndex</title>
+    <meta charset="utf-8"</meta>
+    <link rel="stylesheet" href="StyleSheet.css">
+
+</head>
+
+<body>
+
+    <header>
+    </header>
+
+    @{
+        <div id="update">
+            @Html.Partial("Update")
+        </div>
+        <div id="center">
+            <img id="img_logo2" src="/images/cuillercouteau.png" />
+        </div>
                         if (User.Identity.IsAuthenticated)
                         {
-							
-							<div id="catalogue"> 
-							@Html.Partial("../Service/CatalogueHomechef2.cshtml", Model.ListeDesServices2)
-							</div>	
-							<div id="center"> 
-							<img id="img_logo2" src="/images/cuillercouteau.png"  />
-							</div>	
 
-							<div id="services">
-							@Html.Partial("../Service/MonCatalogue2", Model.ListeDesServices)
-							</div>
-							<div id="center"> 
-							<img id="img_logo2" src="/images/cuillercouteau.png"  />
-							</div>	
+        <div id="catalogue">
+            @Html.Partial("../Service/CatalogueHomechef2.cshtml", Model.ListeDesServices2)
+        </div>
+        <div id="center">
+            <img id="img_logo2" src="/images/cuillercouteau.png" />
+        </div>
 
-							<div id="prestations">
-							@Html.Partial("../Prestation/Prestationchef", Model.ListeDesCommandes)
-							@Html.Partial("../Prestation/PrestationVillageois", Model.ListeDesCommandes2)
-							</div>
-							<div id="center"> 
-							<img id="img_logo2" src="/images/cuillercouteau.png"  />
-							</div>	
-							
-							<div id="infos">
-							@Html.Partial("../Villageois/Villageois",Model.VillageoisConnected)
-							</div>
-							<div id="center"> 
-							<img id="img_logo2" src="/images/cuillercouteau.png"  />
-							</div>	
+        <div id="services">
+            @Html.Partial("../Service/MonCatalogue2", Model.ListeDesServices)
+        </div>
+        <div id="center">
+            <img id="img_logo2" src="/images/cuillercouteau.png" />
+        </div>
+
+        <div id="prestations">
+            @Html.Partial("../Prestation/Prestationchef", Model.ListeDesCommandes)
+            @Html.Partial("../Prestation/PrestationVillageois", Model.ListeDesCommandes2)
+        </div>
+        <div id="center">
+            <img id="img_logo2" src="/images/cuillercouteau.png" />
+        </div>
+
+        <div id="infos">
+            @Html.Partial("../Villageois/Villageois",Model.VillageoisConnected)
+        </div>
+        <div id="center">
+            <img id="img_logo2" src="/images/cuillercouteau.png" />
+        </div>
                         }
                         else
                         {
-							
-							<div id="connexion">
-							@Html.Partial("../Login/Login.cshtml",Model.VVM)
-							</div>
-							<div id="center"> 
-							<img id="img_logo2" src="/images/cuillercouteau.png"  />
-							</div>	
 
-							<div id="catalogue">
-							@Html.Partial("../Service/CatalogueHomechef3.cshtml", Model.ListeDesServices)
-							</div>
-							<div id="center"> 
-							<img id="img_logo2" src="/images/cuillercouteau.png"  />
-							</div>	
+        <div id="connexion">
+            @Html.Partial("../Login/Login.cshtml",Model.VVM)
+        </div>
+        <div id="center">
+            <img id="img_logo2" src="/images/cuillercouteau.png" />
+        </div>
 
-							<div id="prez">
-							@Html.Partial("Presentation")
-							</div>
-							<div id="center"> 
-							<img id="img_logo2" src="/images/cuillercouteau.png"  />
-							</div>	
+        <div id="catalogue">
+            @Html.Partial("../Service/CatalogueHomechef3.cshtml", Model.ListeDesServices)
+        </div>
+        <div id="center">
+            <img id="img_logo2" src="/images/cuillercouteau.png" />
+        </div>
 
-							<div id="fonctionnement">
-							@Html.Partial("Fonctionnement")
-							</div>
-							<div id="center"> 
-							<img id="img_logo2" src="/images/cuillercouteau.png"  />
-							</div>	
-							
-							<div id="inscription">
-							@Html.Partial("Inscription")
-							</div>
-							<div id="center"> 
-							<img id="img_logo2" src="/images/cuillercouteau.png"  />
-							</div>	
+        <div id="prez">
+            @Html.Partial("Presentation")
+        </div>
+        <div id="center">
+            <img id="img_logo2" src="/images/cuillercouteau.png" />
+        </div>
+
+        <div id="fonctionnement">
+            @Html.Partial("Fonctionnement")
+        </div>
+        <div id="center">
+            <img id="img_logo2" src="/images/cuillercouteau.png" />
+        </div>
+
+        <div id="inscription">
+            @Html.Partial("Inscription")
+        </div>
+        <div id="center">
+            <img id="img_logo2" src="/images/cuillercouteau.png" />
+        </div>
                         }
-                    }
-	<div class="text-center" width="150px"  height="200px" border=" 1px solid black">
-                 <button1 class="btn btn-success text-center btn-xl" type="submit">@Html.ActionLink("Admin", "Admin", "admin") </button1>
-                 <button2 class="btn btn-success text-center btn-xl" type="submit">@Html.ActionLink("gestionnaire", "gestionservice", "gestionnaire") </button2>
-    </div>
-		
-	</body>
+    }
+    <!--<div class="text-center" width="150px" height="200px" border=" 1px solid black">
+        <button1 class="btn btn-success text-center btn-xl" type="submit">@Html.ActionLink("Admin", "Admin", "admin") </button1>
+        <button2 class="btn btn-success text-center btn-xl" type="submit">@Html.ActionLink("gestionnaire", "gestionservice", "gestionnaire") </button2>
+    </div>-->
+
+</body>
 
 </html>
 @**@

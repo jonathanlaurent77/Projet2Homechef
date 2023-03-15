@@ -39,7 +39,7 @@ namespace Projet2Homechef.Models
               new Villageois
               {
                   Id = 2,
-                  UserName = "UnitedKate",
+                  UserName = "KathiesCake",
                   Password = "azerty",
                   Nom = "Morgan",
                   Prenom = "Kathie",
@@ -168,7 +168,7 @@ namespace Projet2Homechef.Models
                 {
                     Id = 6,
                     Titre = "Machine à pain",
-                    Description = "Prêt d'une machine à pain",
+                    Description = "Prêt d'une machine pour faire du bon pain",
                     Valider = 1,
                     Chef = villageoisA,
                     ImagePath = "/images/machineapain.jpg"
@@ -177,7 +177,7 @@ namespace Projet2Homechef.Models
                 {
                     Id = 7,
                     Titre = "Pate à pain",
-                    Description = "Prête à mettre au four",
+                    Description = "Il ne reste plus qu'à la mettre au four",
                     Valider = 1,
                     Chef = villageoisA,
                     ImagePath = "/images/pateapain.jpg"
@@ -190,8 +190,8 @@ namespace Projet2Homechef.Models
                     Valider = 1,
                     Chef = villageoisA,
                     ImagePath = "/images/patefraiche.jpg"
-                },
-                new Service
+                }
+                /*new Service
                {
                    Id = 9,
                    Titre = "Tondeuse à gazon",
@@ -199,7 +199,7 @@ namespace Projet2Homechef.Models
                    Valider = 0,
                    Chef = villageoisD,
                    ImagePath = "/images/tondeuse.jpg"
-               }
+               }*/
             );
 
             Service ServiceA = this.Services.Find(1);
